@@ -171,7 +171,7 @@ html {
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    height: 70vh;
+    min-height: 70vh;
 }
 
 #contact h1 {
@@ -248,5 +248,11 @@ footer p {
     .projects-section-header {
         max-width: 90vw;
         font-size: 3em;
+    }
+    #welcome-section {
+        height: fit-content;
+    }
+    #contact {
+        min-height: fit-content;
     }
 }
