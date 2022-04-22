@@ -46,7 +46,7 @@
 
 <body>
     <nav id="navbar">
-        <img id="logo" draggable="false" src="https://i.ibb.co/gvH2XGq/logo.png" alt="">
+        <img style="cursor: pointer;" onclick="scrollPlz()" id="logo" draggable="false" src="https://i.ibb.co/gvH2XGq/logo.png" alt="">
         <div class="navbar">
             <li><a href="#welcome-section">About</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -55,7 +55,8 @@
     </nav>
     <section id="welcome-section">
         <div class="welcome_image">
-            <img draggable="false" src="https://i.ibb.co/xfMKsC6/backlit-structure-designify.png" alt="">
+            <img oncontextmenu="return false;" draggable="false"
+                src="https://i.ibb.co/xfMKsC6/backlit-structure-designify.png" alt="">
         </div>
         <div class="titles">
             <div class="welcome_title">
@@ -114,6 +115,33 @@
             <a href="https://www.freecodecamp.com/" target="_blank">FreeCodeCamp</a>
         </p>
     </footer>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="lni lni-chevron-up"></i></button>
+
 </body>
+<script>
+    var mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    function scrollPlz() {
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+           });
+    }
+</script>
 
 </html

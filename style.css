@@ -38,8 +38,11 @@ html {
     margin: 0 20px;
     height: 65px;
     width: auto;
+    transition: 0.3s ease;
 }
-
+#logo:hover {
+    filter: invert(1);
+}
 #navbar .navbar {
     display: flex;
     justify-content: space-between;
@@ -204,7 +207,7 @@ html {
 }
 
 #contact .profile-link {
-    transition:  0.5s ease;
+    transition: 0.5s ease;
     transition-property: transform, color;
 }
 
@@ -241,6 +244,7 @@ footer p {
     #welcome-section {
         height: 80vh;
     }
+
     #welcome-section .welcome_title {
         font-size: 50px;
     }
@@ -249,10 +253,34 @@ footer p {
         max-width: 90vw;
         font-size: 3em;
     }
+
     #welcome-section {
         height: fit-content;
     }
+
     #contact {
         min-height: fit-content;
     }
+}
+
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(42, 16, 90);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all 1s ease;
+}
+
+#myBtn:hover {
+    background-color: rgb(94, 52, 207);
 }
