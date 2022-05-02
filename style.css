@@ -22,12 +22,18 @@ html {
     scroll-behavior: smooth;
 }
 
+section {
+    padding: 30px 0;
+    min-height: 100vh;
+}
 
+/* ========================== Navbar =============================== */
 #navbar {
     position: sticky;
     top: 0;
     z-index: 2;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 5px 5px rgb(0, 0, 0);
@@ -35,14 +41,16 @@ html {
 }
 
 #navbar #logo {
-    margin: 0 20px;
-    height: 65px;
+    margin-inline-start: 30px;
+    max-height: 65px;
     width: auto;
     transition: 0.3s ease;
 }
+
 #logo:hover {
     filter: invert(1);
 }
+
 #navbar .navbar {
     display: flex;
     justify-content: space-between;
@@ -59,16 +67,16 @@ html {
     color: white;
     text-decoration: none;
     font-size: 23px;
-    padding: 20px;
+    padding: 20px 7vw;
 }
 
 .navbar li a:hover {
     background-color: var(--russian-violet);
 }
 
-
+/* ========================================================= */
+/* ===========================Welcome Section============================== */
 #welcome-section {
-    height: 100vh;
     background-color: var(--xiketic);
 }
 
@@ -108,7 +116,10 @@ html {
     text-shadow: 0px 0px 8px #000000;
 }
 
+/* ========================================================= */
+
 #projects {
+    min-height: 130vh;
     background-color: var(--new-york-pink);
     text-align: center;
     padding: 5rem 2rem;
@@ -167,18 +178,18 @@ html {
     transform: translateY(1px) scale(1.1);
 }
 
-
+/* ========================================================= */
+/* ===========================Contact Us============================== */
 #contact {
     background-color: var(--russian-violet);
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    min-height: 70vh;
+    min-height: 90vh;
 }
 
 #contact h1 {
-    margin-top: 20px;
     text-align: center;
     font-family: 'Righteous', cursive;
     font-size: 3em;
@@ -189,32 +200,34 @@ html {
 
 #contact .contact-link {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
     align-items: center;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 }
 
 
 #contact .contact-link a {
+
     font-size: 30px;
-    text-decoration: none;
-    color: white;
-    text-shadow: 0px 0px 2px black;
-    padding: 1em;
-
-}
-
-#contact .profile-link {
+    border-radius: 123px;
+    background: #11001ce0;
+    box-shadow: -14px -14px 28px rgba(14, 0, 22, 0.5),
+        14px 14px 28px rgba(34, 0, 58, 0.5);
     transition: 0.5s ease;
     transition-property: transform, color;
+    padding: 1em;
+    text-decoration: none;
+    color: white;
 }
 
-#contact .profile-link:hover {
+#contact a:hover {
     color: var(--gainsboro);
     transform: translate(0px, -3px)
 }
+
+
+/* ========================================================= */
 
 footer {
     min-height: 30px;
@@ -229,20 +242,47 @@ footer p {
 
 
 
+@media only screen and (max-width: 710px) {
+    #navbar {
+        flex-direction: column;
+    }
 
-@media only screen and (max-width: 520px) {
     #navbar #logo {
-        display: none
+        margin: 0;
+        max-height: 50px;
     }
 
     #navbar .navbar {
-        flex-basis: 100%;
+        width: 90vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar li {
+        list-style: none;
+    }
+
+    .navbar li a {
+        color: white;
+        font-size: 20px;
+        padding: 15px 6vw;
     }
 }
 
 @media only screen and (max-width: 430px) {
-    #welcome-section {
-        height: 80vh;
+    #navbar .navbar {
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .navbar li a {
+        color: white;
+        font-size: 15px;
+        padding: 15px 5vw;
     }
 
     #welcome-section .welcome_title {
@@ -252,14 +292,6 @@ footer p {
     .projects-section-header {
         max-width: 90vw;
         font-size: 3em;
-    }
-
-    #welcome-section {
-        height: fit-content;
-    }
-
-    #contact {
-        min-height: fit-content;
     }
 }
 
@@ -283,4 +315,15 @@ footer p {
 
 #myBtn:hover {
     background-color: rgb(94, 52, 207);
+}
+
+.js div#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #0d0036 url('https://svgshare.com/i/gjt.svg') no-repeat center center;
 }
