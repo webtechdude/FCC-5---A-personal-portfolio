@@ -211,11 +211,11 @@ section {
 
     font-size: 30px;
     border-radius: 50%;
-    background: #11001ce0;
-    box-shadow: -14px -14px 28px rgba(14, 0, 22, 0.5),
-        14px 14px 28px rgba(34, 0, 58, 0.5);
+    background: linear-gradient(145deg, #12001e, #0f0019);
+    box-shadow: 5px 5px 13px rgba(14, 0, 22, 0.5),
+        -5px -5px 13px rgba(20, 0, 34, 0.5);
     transition: 0.5s ease;
-    transition-property: transform, color;
+    transition-property: all;
     padding: 1em;
     text-decoration: none;
     color: white;
@@ -223,7 +223,10 @@ section {
 
 #contact a:hover {
     color: var(--gainsboro);
-    transform: translate(0px, -3px)
+    transform: translate(0px, -3px);
+    background: linear-gradient(145deg, #12001ec9, #0f0019cc);
+    box-shadow: 6px 6px 16px rgba(18, 0, 30, 0.63),
+        -6px -6px 16px rgba(15, 0, 25, 0.651);
 }
 
 
@@ -285,10 +288,11 @@ footer p {
     #contact .contact-link {
         gap: 38px;
     }
+
     #contact .contact-link a {
         font-size: 25px;
         padding: 0.8em;
-    
+
     }
 
 }
@@ -316,9 +320,11 @@ footer p {
         max-width: 90vw;
         font-size: 3em;
     }
+
     #contact {
         min-height: 60vh;
     }
+
     #contact h1 {
         font-size: 2.3em;
     }
@@ -326,10 +332,11 @@ footer p {
     #contact .contact-link {
         gap: 25px;
     }
+
     #contact .contact-link a {
         font-size: 22px;
         padding: 0.8em;
-    
+
     }
 }
 
