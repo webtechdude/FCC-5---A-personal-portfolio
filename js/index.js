@@ -22,3 +22,25 @@ function scrollPlz() {
         behavior: 'smooth'
     });
 }
+
+
+
+// Jquery
+$(window).on('keydown', function (event) {
+    if (event.keyCode == 123) {
+        alert("Don't do nonsense 😜");
+        return false;
+    }
+    else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+        alert("Don't try downloading my hot pic 😜")
+        return false;  //Prevent from ctrl+shift+i
+    }
+    else if (event.ctrlKey && event.keyCode == 73) {
+        alert('Please dont 😜')
+        return false;  //Prevent from ctrl+shift+i
+    }
+});
+$(document).on("contextmenu", function (e) {
+    alert('Right Click Not Allowed, dont worry links will be opened in new tab')
+    e.preventDefault();
+});
