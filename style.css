@@ -333,6 +333,9 @@ footer p {
         max-width: 90vw;
         font-size: 3em;
     }
+    .project-image {
+        filter: none;
+    }
 
     #contact {
         min-height: 60vh;
