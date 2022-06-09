@@ -38,7 +38,7 @@ function scrollPlz() {
 let mypic = document.getElementById('myImg');
 let images = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpeg", "img/6.jpeg"]
 let counter = 0;
-let rotateGallery = function () {
+let rotateGallery = () => {
     mypic.src = images[counter];
     counter++;
     if (counter >= images.length) {
