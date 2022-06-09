@@ -1,14 +1,17 @@
+// Scroll Out
+ScrollOut({ once: true });
+// ===========
 var lastScrollTop;
 navbar = document.getElementById('navbar');
-window.addEventListener('scroll',function(){
-var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-if(scrollTop > lastScrollTop){
-navbar.style.top='-80px';
-}
-else{
-navbar.style.top='0';
-}
-lastScrollTop = scrollTop;
+window.addEventListener('scroll', function () {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.style.top = '-80px';
+    }
+    else {
+        navbar.style.top = '0';
+    }
+    lastScrollTop = scrollTop;
 });
 
 
@@ -35,16 +38,43 @@ function scrollPlz() {
         behavior: 'smooth'
     });
 }
+// ================
+// Transition Image
+
 let mypic = document.getElementById('myImg');
 let images = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpeg", "img/6.jpeg"]
 let counter = 0;
-let rotateGallery = () => {
+function changeImg() {
     mypic.src = images[counter];
     counter++;
     if (counter >= images.length) {
         counter = 0;
     }
-};
+}
+function fadeIn() {
+    mypic.classList.remove("fade-out");
+    mypic.classList.add("fade-in");
+}
+
+function fadeOut() {
+    mypic.classList.remove("fade-in");
+    mypic.classList.add("fade-out");
+
+    // Add listener to the "transitionend" event.
+
+    mypic.addEventListener("transitionend", function x() {
+        // Remove the previously added listener, change
+        // the image and fade-in the new image.
+
+        mypic.removeEventListener("transitionend", x);
+        changeImg();
+        fadeIn();
+    });
+}
+
+setInterval(fadeOut, 6000);
+// ==================================
+
 // Jquery
 $(window).on('keydown', function (event) {
     if (event.keyCode == 123) {
@@ -64,14 +94,3 @@ $(document).on("contextmenu", function (e) {
     alert('Right Click Not Allowed, dont worry links will be opened in new tab')
     e.preventDefault();
 });
-
-
-var controller = new ScrollMagic.Controller();
-
-// create a scene
-new ScrollMagic.Scene({
-    duration: 50, // the scene should last for a scroll distance of 100px
-    offset: 10 // start this scene after scrolling for 50px
-})
-    .setPin('#myImg') // pins the element for the the scene's duration
-    .addTo(controller); // assign the scene to the controller

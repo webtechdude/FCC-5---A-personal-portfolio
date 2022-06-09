@@ -58,8 +58,7 @@
     </nav>
     <section id="welcome-section">
         <div class="welcome_image">
-            <img id="myImg" onmouseover="rotateGallery()" onmousedown="rotateGallery()" oncontextmenu="return false;"
-                draggable="false" src="img/1.jpg" alt="">
+            <img id="myImg" class="fade" oncontextmenu="return false;" draggable="false" src="img/1.jpg" alt="">
         </div>
         <div class="titles">
             <div class="welcome_title">
@@ -70,7 +69,7 @@
     </section>
     <section id="projects">
         <h2 class="projects-section-header">These are some of my projects</h2>
-        <div class="projects-grid">
+        <div data-scroll class="projects-grid">
             <a href="https://codepen.io/Web-Tech-DUDE/pen/OJOBOPx" target="_blank" class="project-tile">
                 <img class="project-image" src="https://shots.codepen.io/Web-Tech-DUDE/pen/OJOBOPx-512.jpg"
                     alt="project" />
@@ -138,7 +137,7 @@
     </section>
     <section id="contact">
         <h1>Some of my profile links...</h1>
-        <div class="contact-link">
+        <div data-scroll="" class="contact-link">
             <a class="profile-link" id="profile-link" href="https://github.com/webtechdude" target="_blank"><i
                     class="lni lni-github-original"></i></a>
             <a class="profile-link" href="https://www.youtube.com/channel/UCZMViE8E_BYPps-mFDgzpJg" target="_blank"><i
@@ -151,6 +150,8 @@
                     class="lni lni-linkedin"></i></a>
             <a class="profile-link" href="https://discord.gg/DEC9FmyJFZ" target="_blank"><i
                     class="lni lni-discord"></i></a>
+            <a class="profile-link" href="https://www.facebook.com/webtechdudefb" target="_blank"><i
+                    class="lni lni-facebook"></i></a>
         </div>
     </section>
     <footer>
@@ -160,9 +161,9 @@
     </footer>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="lni lni-chevron-up"></i></button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 
 
-</html
+</html>
