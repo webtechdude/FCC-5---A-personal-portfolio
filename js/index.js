@@ -42,55 +42,40 @@ function scrollPlz() {
 // Transition Image
 
 let mypic = document.getElementById('myImg');
-let images = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpeg", "img/6.jpeg"]
-let counter = 0;
-function changeImg() {
-    mypic.src = images[counter];
-    counter++;
-    if (counter >= images.length) {
-        counter = 0;
+let images = ["img/1.png", "img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpeg", "img/6.jpeg"]
+let countImg = 0;
+
+
+
+setInterval(function changeImg() {
+    if (countImg == images.length - 1) {
+        countImg = 0;
     }
-}
-function fadeIn() {
-    mypic.classList.remove("fade-out");
-    mypic.classList.add("fade-in");
-}
+    else {
+        countImg++
+    }
+    mypic.src = images[countImg];
+}, 3000);
 
-function fadeOut() {
-    mypic.classList.remove("fade-in");
-    mypic.classList.add("fade-out");
 
-    // Add listener to the "transitionend" event.
-
-    mypic.addEventListener("transitionend", function x() {
-        // Remove the previously added listener, change
-        // the image and fade-in the new image.
-
-        mypic.removeEventListener("transitionend", x);
-        changeImg();
-        fadeIn();
-    });
-}
-
-setInterval(fadeOut, 6000);
 // ==================================
 
 // Jquery
 $(window).on('keydown', function (event) {
     if (event.keyCode == 123) {
-        alert("Don't do nonsense 😜");
+        alert("Not allowed");
         return false;
     }
     else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-        alert("Don't try downloading my hot pic 😜")
+        alert("Image can't be downloaded so easily!")
         return false;  //Prevent from ctrl+shift+i
     }
     else if (event.ctrlKey && event.keyCode == 73) {
-        alert('Please dont 😜')
+        alert('Couldn\'t open the menu!')
         return false;  //Prevent from ctrl+shift+i
     }
 });
 $(document).on("contextmenu", function (e) {
-    alert('Right Click Not Allowed, dont worry links will be opened in new tab')
+    alert('Right Click Not Allowed, dont worry, links will be opened in new tab')
     e.preventDefault();
 });

@@ -93,6 +93,20 @@ section {
     width: 400px;
     height: 400px;
     clip-path: circle(50% at 50% 50%);
+    animation: fading 3s linear infinite;
+}
+@keyframes fading {
+    0% {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+    50% {opacity: 1;
+        transform: translateX(0);
+    }
+    100% {opacity: 0;
+        transform: translateX(-5px);
+    }
+    
 }
 
 #welcome-section .titles {
